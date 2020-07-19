@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}hi {% endblock %}</title>
+</head>
+
+<body>
+<form id="upload-form" name="upload-form" class="nobottommargin" action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="{{ form.profile_pic.id_for_label }}">Pic:</label>
+        {{ form.profile_pic }}
+
+<br/>
+      <button  id="submit" value="upload" >Edit Now</button>
+</form>
+
+
+</body>
+</html>
